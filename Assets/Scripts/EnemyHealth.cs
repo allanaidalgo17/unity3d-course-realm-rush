@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
 
     private int currentHealth;
 
-    void Start()
+    void OnEnable()
     {
         currentHealth = maxHealth;
     }
@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
